@@ -1,0 +1,54 @@
+{
+  "carriers": [
+    {
+      "dot_number": "123456",
+      "legal_name": "Northline Freight LLC",
+      "safety_rating": "Satisfactory",
+      "oos_rate": 18.4,
+      "crash_total": 2,
+      "driver_oos_rate": 4.7,
+      "insurance_status": "Active",
+      "authority_status": "Authorized for Property"
+    },
+    {
+      "dot_number": "234567",
+      "legal_name": "Blue Horizon Transport Inc",
+      "safety_rating": "Conditional",
+      "oos_rate": 29.6,
+      "crash_total": 6,
+      "driver_oos_rate": 9.3,
+      "insurance_status": "Active",
+      "authority_status": "Authorized for Property"
+    },
+    {
+      "dot_number": "345678",
+      "legal_name": "Atlas Cold Chain Carriers",
+      "safety_rating": "Satisfactory",
+      "oos_rate": 14.1,
+      "crash_total": 1,
+      "driver_oos_rate": 3.1,
+      "insurance_status": "Active",
+      "authority_status": "Authorized for Property"
+    },
+    {
+      "dot_number": "456789",
+      "legal_name": "Red Canyon Logistics",
+      "safety_rating": "None",
+      "oos_rate": 27.8,
+      "crash_total": 4,
+      "driver_oos_rate": 7.8,
+      "insurance_status": "Active",
+      "authority_status": "Not Authorized"
+    },
+    {
+      "dot_number": "567890",
+      "legal_name": "Summit Intermodal Services",
+      "safety_rating": "Satisfactory",
+      "oos_rate": 12.5,
+      "crash_total": 0,
+      "driver_oos_rate": 2.4,
+      "insurance_status": "Active",
+      "authority_status": "Authorized for Property"
+    }
+  ]
+}
