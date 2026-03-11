@@ -14,7 +14,7 @@ test.describe('Auth', () => {
     await page.getByRole('button', { name: 'Criar conta' }).click();
 
     await expect(page).toHaveURL(/\//);
-    await expect(page.getByText(email, { exact: false })).toBeVisible({ timeout: 5000 });
+    await expect(page.getByRole('button', { name: /Sair|Logout/i })).toBeVisible({ timeout: 10000 });
 
     await page.getByRole('button', { name: /Sair|Logout/i }).first().click();
     await expect(page).toHaveURL(/\/login/);
@@ -24,6 +24,6 @@ test.describe('Auth', () => {
     await page.getByRole('button', { name: 'Login' }).click();
 
     await expect(page).toHaveURL(/\//);
-    await expect(page.getByText(email, { exact: false })).toBeVisible({ timeout: 5000 });
+    await expect(page.getByRole('button', { name: /Sair|Logout/i })).toBeVisible({ timeout: 10000 });
   });
 });

@@ -91,6 +91,7 @@ export function UploadZone({ disabled, onFileAccepted }: UploadZoneProps): JSX.E
           type="file"
           accept=".json,application/json"
           className="hidden"
+          data-testid="upload-file-input"
           onChange={(event) => {
             const file = event.target.files?.[0];
             if (!file) return;
