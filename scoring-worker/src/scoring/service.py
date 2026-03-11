@@ -97,7 +97,9 @@ class ScoringService:
                 max_points=MAX_SAFETY,
                 weight_pct=WEIGHT_SAFETY_RATING,
                 input_value=carrier.safety_rating,
-                description=self._describe_safety_rating(carrier.safety_rating, breakdown.safety_rating),
+                description=self._describe_safety_rating(
+                    carrier.safety_rating, breakdown.safety_rating
+                ),
             ),
             FactorExplanation(
                 factor="oos_pct",
@@ -121,7 +123,9 @@ class ScoringService:
                 max_points=MAX_DRIVER_OOS,
                 weight_pct=WEIGHT_DRIVER_OOS,
                 input_value=carrier.driver_oos_rate,
-                description=self._describe_driver_oos(carrier.driver_oos_rate, breakdown.driver_oos),
+                description=self._describe_driver_oos(
+                    carrier.driver_oos_rate, breakdown.driver_oos
+                ),
             ),
             FactorExplanation(
                 factor="insurance",
@@ -198,7 +202,7 @@ class ScoringService:
             return "Insurance active — full points."
         if v == "inactive":
             return "Insurance inactive — zero points."
-        return f"Unknown insurance status — neutral points."
+        return "Unknown insurance status — neutral points."
 
     def _describe_authority(self, value: str | None, points: float) -> str:
         if not value:
@@ -210,7 +214,7 @@ class ScoringService:
             return "Authority inactive — partial points."
         if v == "revoked":
             return "Authority revoked — zero points."
-        return f"Unknown authority status — neutral points."
+        return "Unknown authority status — neutral points."
 
     def _normalize_rate(self, value: float | None) -> float | None:
         if value is None:

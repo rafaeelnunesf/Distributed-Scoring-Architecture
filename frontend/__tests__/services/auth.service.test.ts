@@ -1,3 +1,4 @@
+import { getAccessToken, setTokens } from '@/lib/token-store';
 import { authService } from '@/services/auth.service';
 import { apiClient } from '@/services/api-client';
 
@@ -10,7 +11,6 @@ vi.mock('@/services/api-client', () => ({
 describe('auth.service', () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    window.localStorage.clear();
   });
 
   it('realiza login e salva tokens localmente', async () => {
@@ -26,18 +26,16 @@ describe('auth.service', () => {
       email: 'rafael@example.com',
       password: '123456',
     });
-    expect(window.localStorage.getItem('carrier_assure_access_token')).toBe('access-token');
-    expect(window.localStorage.getItem('carrier_assure_refresh_token')).toBe('refresh-token');
+    expect(getAccessToken()).toBe('access-token');
   });
 
-  it('logout limpa tokens locais', () => {
-    window.localStorage.setItem('carrier_assure_access_token', 'token');
-    window.localStorage.setItem('carrier_assure_refresh_token', 'refresh');
+  it('logout limpa tokens locais', async () => {
+    setTokens({ access_token: 'token', refresh_token: 'refresh' });
+    vi.mocked(apiClient.post).mockResolvedValueOnce(undefined);
 
-    authService.logout();
+    await authService.logout();
 
-    expect(window.localStorage.getItem('carrier_assure_access_token')).toBeNull();
-    expect(window.localStorage.getItem('carrier_assure_refresh_token')).toBeNull();
+    expect(getAccessToken()).toBeNull();
   });
 
   it('refresh chama endpoint correto', async () => {

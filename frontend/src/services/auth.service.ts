@@ -33,6 +33,13 @@ class AuthService {
     return { email: result.email ?? email };
   }
 
+  async refresh(refreshToken: string): Promise<{ access_token: string }> {
+    const result = await apiClient.post<{ access_token: string }>('/auth/refresh', {
+      refresh_token: refreshToken,
+    });
+    return result;
+  }
+
   async getMe(): Promise<{ email: string } | null> {
     try {
       return await apiClient.get<{ email: string }>('/auth/me');
