@@ -1,0 +1,63 @@
+{
+  "name": "carrier-assure-v3-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Carrier Assure V3 backend scaffolding",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "start:dev": "ts-node src/main.ts",
+    "lint": "tsc --noEmit",
+    "test": "jest --passWithNoTests",
+    "test:unit": "jest --runInBand test/unit",
+    "test:integration": "jest --runInBand test/integration"
+  },
+  "dependencies": {
+    "@nestjs/bull": "latest",
+    "@nestjs/bullmq": "latest",
+    "@nestjs/common": "latest",
+    "@nestjs/config": "latest",
+    "@nestjs/core": "latest",
+    "@nestjs/jwt": "latest",
+    "@nestjs/mongoose": "latest",
+    "@nestjs/passport": "latest",
+    "@nestjs/platform-express": "latest",
+    "@nestjs/swagger": "latest",
+    "@nestjs/throttler": "latest",
+    "axios": "latest",
+    "bcryptjs": "latest",
+    "bullmq": "latest",
+    "class-transformer": "latest",
+    "class-validator": "latest",
+    "cookie-parser": "^1.4.7",
+    "helmet": "latest",
+    "ioredis": "latest",
+    "joi": "latest",
+    "mongoose": "latest",
+    "passport": "latest",
+    "passport-jwt": "latest",
+    "reflect-metadata": "latest",
+    "rxjs": "latest",
+    "swagger-ui-express": "latest"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "latest",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "latest",
+    "@types/jest": "latest",
+    "@types/multer": "latest",
+    "@types/node": "latest",
+    "@types/passport": "latest",
+    "@types/passport-jwt": "latest",
+    "@types/supertest": "latest",
+    "jest": "latest",
+    "mongodb-memory-server": "latest",
+    "supertest": "latest",
+    "ts-jest": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
