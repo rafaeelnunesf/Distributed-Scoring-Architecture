@@ -148,7 +148,7 @@ graph TB
   end
 
   subgraph worker_app [Scoring Worker - Python/FastAPI]
-    ScoreRoutes[/score + /score/batch]
+    ScoreRoutes["/score + /score/batch"]
     ScoringService[ScoringService]
     HashService[HashService]
   end
